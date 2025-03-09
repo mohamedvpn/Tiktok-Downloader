@@ -28,25 +28,27 @@ class Tiktok_List_Video(ft.View):
         
 
         self.num_target = ft.TextField(
-                                label="عدد",
-                                width=50,
-                                value="1",
-                                border=ft.InputBorder.NONE,
-                                label_style=ft.TextStyle(color="white"),
-                                input_filter=ft.NumbersOnlyInputFilter(),
-                            )
+            label="عدد",
+            width=50,
+            value="1",
+            border=ft.InputBorder.NONE,
+            label_style=ft.TextStyle(color="white"),
+            input_filter=ft.NumbersOnlyInputFilter(),
+        )
         self.Text_msg = ft.TextField(
-                                label="أدخل يوزر الحساب هنا",
-                                rtl=True,
-                                # border=ft.InputBorder.NONE,
-                                # multiline=True,
-                                expand=True,
-                                # value="abo.3aid",
-                                # on_change=on_change_msg
-                                label_style=ft.TextStyle(color="white"),
-                                # border_radius=20,
-                                border="underline"
-                                )
+            label="أدخل يوزر الحساب هنا",
+            rtl=True,
+            # border=ft.InputBorder.NONE,
+            # multiline=True,
+            expand=True,
+            # value="abo.3aid",
+            # on_change=on_change_msg
+            label_style=ft.TextStyle(color="white"),
+            # border_radius=20,
+            border="underline"
+        )
+
+        self.bt_enter = ft.IconButton(icon=ft.icons.SEND,on_click=lambda _:self.Send_user(),icon_color="#ffffff")
         
 
         
@@ -102,19 +104,21 @@ class Tiktok_List_Video(ft.View):
 
                             self.num_target,
 
+                            self.bt_enter,
                             self.Text_msg,
 
 
                         ],alignment=ft.MainAxisAlignment.CENTER,)
                     ),
                 padding=ft.padding.only(left=5),
+                # bgcolor="green",
                 
                 ),
             ]),
             padding=ft.padding.only(right=15),
             alignment=ft.alignment.center,
             # border=ft.border.all(1,"#000000"),
-            border_radius=20,
+            border_radius=10,
         )
 
         # self.controls = [self.root]
@@ -129,7 +133,7 @@ class Tiktok_List_Video(ft.View):
                     actions=[
                         #ft.PopupMenuButton(#icon=ft.Icons.MENU,icon_size=25,
                             ft.Container(
-                                ft.IconButton(icon=ft.Icons.CLOSE,icon_color="red",bgcolor="#1b263b",icon_size=18,width=35,height=35,on_click=self.fun_close),
+                                ft.IconButton(icon=ft.Icons.CLOSE,icon_color="#ffffff",icon_size=18,width=35,height=35,on_click=self.fun_close),
                             margin=ft.Margin(0,0,5,0)
                             )
                             # items=[
@@ -476,7 +480,7 @@ class Tiktok_One_Video(ft.View):
             border="underline"
         )
         
-
+        self.bt_enter = ft.IconButton(icon=ft.icons.SEND,on_click=lambda _:self.Send_user(),icon_color="#ffffff")
         
        
         
@@ -527,7 +531,7 @@ class Tiktok_One_Video(ft.View):
                 ft.Container(
                     content=ft.Container(
                         ft.Row([
-
+                            self.bt_enter,
                             self.Text_msg,
 
 
