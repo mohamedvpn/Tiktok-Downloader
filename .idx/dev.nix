@@ -32,6 +32,9 @@
           if [ ! -f requirements.txt ]; then
             echo "requirements.txt not found. Creating one with flet..."
             echo "flet" > requirements.txt
+            echo "requests" > requirements.txt
+            echo "fake_useragent" > requirements.txt
+
           fi
 
           # activate virtual env and install requirements
@@ -54,6 +57,8 @@
           if [ ! -f requirements.txt ]; then
             echo "requirements.txt not found. Creating one with flet..."
             echo "flet" > requirements.txt
+            echo "requests" > requirements.txt
+            echo "fake_useragent" > requirements.txt
           fi
 
           # activate virtual env and install requirements
